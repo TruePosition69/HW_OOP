@@ -15,6 +15,9 @@ class Student:
                 lecturer.marks[course] = [mark]
         else:
             return 'Ошибка'
+    
+    def __str__(self) -> str:
+        return f'{self.name}{self.surname}{self.gender}'
                 
 class Mentor:
     def __init__(self, name, surname):
