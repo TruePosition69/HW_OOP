@@ -1,8 +1,7 @@
 class Student:
-    def __init__(self, name, surname, gender):
+    def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.gender = gender
         self.finished_courses = []
         self.courses_in_progress = []
         self.grades = {}
@@ -16,18 +15,27 @@ class Student:
         else:
             return 'Ошибка'
     
-    def __str__(self) -> str:
-        return f'{self.name}{self.surname}{self.gender}'
-                
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
         self.courses_attached = []
-        
+
+    def __str__(self) -> str:
+        return f'Имя: {self.name} \nФамилия: {self.surname}'
+
 class Lecturer(Mentor):
     def __init__(self):
         self.marks = {}
+
+    def average(self)
+        self.marks_list = list(self.marks.values())
+        self.sum_marks = sum(self.marks_list)
+        self.marks_avg = self.sum_marks/len(self.marks_list)
+
+
+    def __str__(self) -> str:
+        return f'Имя: {self.name} \nФамилия: {self.surname} \nСредняя оценка за лекции'
 
 class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):
@@ -38,3 +46,6 @@ class Reviewer(Mentor):
                 student.grades[course] = [grade]
         else:
             return 'Ошибка'
+    
+    def __str__(self) -> str:
+        return f'Имя: {self.name} \nФамилия: {self.surname}'
